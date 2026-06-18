@@ -87,8 +87,9 @@ ul.clean li:before{content:"";position:absolute;left:0;top:.55em;width:.5em;heig
 .aqi-plate{display:inline-flex;align-items:center;background:#fff;border-radius:8px;box-shadow:0 6px 20px rgba(0,0,0,.28);}
 .aqi-plate svg{display:block;}
 .brandmark{position:fixed;left:14px;bottom:9px;z-index:60;}
-.brandmark .aqi-plate{padding:4px 8px;border-radius:5px;box-shadow:0 2px 8px rgba(0,0,0,.3);}
-.brandmark .aqi-plate svg{height:21px;width:75px;}
+.brandmark .aqi-plate{flex-direction:column;padding:5px 10px 4px;border-radius:6px;box-shadow:0 2px 8px rgba(0,0,0,.3);}
+.brandmark .aqi-square{display:block;height:30px;width:29px;}
+.brandmark .aqi-url{font-family:'Segoe UI',system-ui,sans-serif;font-size:9px;font-weight:700;letter-spacing:.3px;color:var(--brand-navy);margin-top:3px;line-height:1;}
 .title-logo .aqi-plate{padding:11px 16px;}
 .title-logo .aqi-plate svg{height:54px;width:192px;}
 .end-logo .aqi-plate{padding:16px 22px;}
@@ -109,10 +110,18 @@ ul.clean li:before{content:"";position:absolute;left:0;top:.55em;width:.5em;heig
     <text x="165" y="76"  font-family="Georgia,'Times New Roman',serif" font-size="60" font-weight="700" fill="#1f2a6e">AquaSummit</text>
     <text x="165" y="140" font-family="Georgia,'Times New Roman',serif" font-size="60" font-weight="700" fill="#c8102e">Instruments</text>
   </symbol>
+  <!-- compact mark: just the AQi square (used for the per-slide attribution bug) -->
+  <symbol id="aqi-mark" viewBox="0 0 147 151">
+    <rect x="6"   y="27"  width="18"  height="118" fill="#1f2a6e"/>
+    <rect x="6"   y="127" width="121" height="18"  fill="#1f2a6e"/>
+    <rect x="23"  y="6"   width="118" height="18"  fill="#c8102e"/>
+    <rect x="123" y="23"  width="18"  height="104" fill="#c8102e"/>
+    <text x="73" y="93" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-size="50" font-weight="700" fill="#1f2a6e">AQi</text>
+  </symbol>
 </svg>
 
-<!-- persistent footer brand bug -->
-<div class="brandmark"><span class="aqi-plate"><svg viewBox="0 0 585 165"><use href="#aqi-logo"/></svg></span></div>
+<!-- persistent per-slide attribution bug: AQi square + website -->
+<div class="brandmark"><span class="aqi-plate"><svg class="aqi-square" viewBox="0 0 147 151"><use href="#aqi-mark"/></svg><span class="aqi-url">aquasummit.com</span></span></div>
 
 <div class="reveal"><div class="slides">
 
